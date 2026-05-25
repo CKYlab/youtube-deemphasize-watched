@@ -1,0 +1,41 @@
+/* ==UserStyle==
+@name         YouTube - De-emphasize Watched Videos
+@namespace    https://github.com/CKYlab/youtube-deemphasize-watched
+@version      1.0.0
+@description  De-emphasizes watched YouTube videos, including recommendations on the watch page.
+@author       CHiKA
+@license      MIT
+==/UserStyle== */
+
+/* 視聴済み動画を暗くする：ホーム・検索・右側おすすめ対応版 */
+
+:is(
+    ytd-rich-item-renderer,
+    ytd-video-renderer,
+    ytd-compact-video-renderer,
+    ytd-compact-radio-renderer,
+    ytd-compact-playlist-renderer,
+    yt-lockup-view-model
+):not(:hover):has(
+    :is(
+        yt-thumbnail-overlay-progress-bar-view-model,
+        ytd-thumbnail-overlay-resume-playback-renderer,
+        #progress
+    )
+) {
+    filter: saturate(.15) brightness(.75) !important;
+    opacity: .35 !important;
+}
+
+/* ホバー中は必ず戻す */
+:is(
+    ytd-rich-item-renderer,
+    ytd-video-renderer,
+    ytd-compact-video-renderer,
+    ytd-compact-radio-renderer,
+    ytd-compact-playlist-renderer,
+    yt-lockup-view-model
+):hover {
+    filter: none !important;
+    opacity: 1 !important;
+}
