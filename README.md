@@ -24,3 +24,14 @@ YouTubeのHTML構造変更により、将来的に動作しなくなる可能性
 ## License
 
 MIT
+
+## Supported areas
+
+- Home
+- Search results
+- Channel/video lists
+- Watch-page recommendations
+
+## Notes
+
+This userstyle depends on YouTube's HTML structure, so it may stop working if YouTube changes its layout.
